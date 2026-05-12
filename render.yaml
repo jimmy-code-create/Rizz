@@ -26,7 +26,6 @@ services:
   - type: web
     name: nexus-frontend
     runtime: static
-    region: oregon
     plan: free
     buildCommand: "npm install -g pnpm && pnpm install --frozen-lockfile && pnpm --filter @workspace/nexus run build"
     staticPublishPath: ./artifacts/nexus/dist

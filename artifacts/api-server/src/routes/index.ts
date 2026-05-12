@@ -1,8 +1,41 @@
 import { Router, type IRouter } from "express";
-import healthRouter from "./health";
+import healthRouter from "./health.js";
+import authRouter from "./auth.js";
+import usersRouter from "./users.js";
+import postsRouter from "./posts.js";
+import dmRouter from "./dm.js";
+import groupsRouter from "./groups.js";
+import storiesRouter from "./stories.js";
+import notificationsRouter from "./notifications.js";
+import badgesRouter from "./badges.js";
+import serversRouter from "./servers.js";
+import uploadRouter from "./upload.js";
+import reelsRouter from "./reels.js";
+import callsRouter from "./calls.js";
+import discoverRouter from "./discover.js";
+import eventsRouter from "./events.js";
+import pushRouter from "./push.js";
+import adminRouter from "./admin.js";
 
 const router: IRouter = Router();
 
 router.use(healthRouter);
+router.use(eventsRouter);
+router.use("/auth", authRouter);
+router.use("/users", usersRouter);
+router.use("/feed", postsRouter);
+router.use("/posts", postsRouter);
+router.use("/dm", dmRouter);
+router.use("/groups", groupsRouter);
+router.use("/stories", storiesRouter);
+router.use("/notifications", notificationsRouter);
+router.use("/badges", badgesRouter);
+router.use("/servers", serversRouter);
+router.use("/upload", uploadRouter);
+router.use("/reels", reelsRouter);
+router.use("/calls", callsRouter);
+router.use("/push", pushRouter);
+router.use("/admin", adminRouter);
+router.use(discoverRouter);
 
 export default router;

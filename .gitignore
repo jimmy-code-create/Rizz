@@ -47,3 +47,15 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Build outputs
+artifacts/*/dist/
+
+# Uploads (user content — do NOT commit to git)
+artifacts/api-server/uploads/*
+!artifacts/api-server/uploads/.gitkeep
+
+# Environment secrets
+.env
+.env.local
+.env.*.local

@@ -3,7 +3,6 @@ services:
     name: nexus-api
     runtime: node
     region: oregon
-    plan: free
     buildCommand: "npm install -g pnpm && pnpm install --frozen-lockfile && pnpm --filter @workspace/api-server run build"
     startCommand: "node --enable-source-maps artifacts/api-server/dist/index.mjs"
     healthCheckPath: /api/healthz
@@ -26,7 +25,6 @@ services:
   - type: web
     name: nexus-frontend
     runtime: static
-    plan: free
     buildCommand: "npm install -g pnpm && pnpm install --frozen-lockfile && pnpm --filter @workspace/nexus run build"
     staticPublishPath: ./artifacts/nexus/dist
     pullRequestPreviewsEnabled: false
